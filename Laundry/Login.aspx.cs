@@ -23,20 +23,20 @@ namespace Laundry
         {
             SqlConnection Koneksi = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             Koneksi.Open();
-            string cekuser = "select count(*) from [User] where email='" + email.Text + "'";
+            string cekuser = "select count(*) from [Operator] where email='" + email.Text + "'";
             SqlCommand query = new SqlCommand(cekuser, Koneksi);
             int jumlah = Convert.ToInt32(query.ExecuteScalar().ToString());
             Koneksi.Close();
             if (jumlah == 1)
             {
                 Koneksi.Open();
-                string passwordsql = "select password from [User] where email='" + email.Text + "'";
+                string passwordsql = "select password from [Operator] where email='" + email.Text + "'";
                 SqlCommand passquery = new SqlCommand(passwordsql, Koneksi);
                 string passwordbaru = passquery.ExecuteScalar().ToString();
                 Koneksi.Close();
                 if (passwordbaru == password.Text)
                 {
-                    Session["User"] = email.Text;
+                    Session["Operator"] = email.Text;
                     Response.Redirect("Operator.aspx");
                 }
                 else

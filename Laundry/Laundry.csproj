@@ -1232,7 +1232,9 @@
     <Content Include="Operator.aspx" />
     <Content Include="Paket.aspx" />
     <Content Include="RegisterOperator.aspx" />
+    <Content Include="RegisterUser.aspx" />
     <Content Include="Transaksi.aspx" />
+    <Content Include="User.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1286,6 +1288,13 @@
     <Compile Include="RegisterOperator.aspx.designer.cs">
       <DependentUpon>RegisterOperator.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RegisterUser.aspx.cs">
+      <DependentUpon>RegisterUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterUser.aspx.designer.cs">
+      <DependentUpon>RegisterUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TemplateWeb.Master.cs">
       <DependentUpon>TemplateWeb.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1299,6 +1308,13 @@
     </Compile>
     <Compile Include="Transaksi.aspx.designer.cs">
       <DependentUpon>Transaksi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

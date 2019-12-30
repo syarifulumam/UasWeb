@@ -7,14 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Laundry
 {
-    public partial class Operator : System.Web.UI.Page
+    public partial class User : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Operator"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
+
         }
     }
 }

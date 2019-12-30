@@ -7,7 +7,9 @@
             <div class="card-body">
               <div class="form-group">
                 <label for="exampleInputEmail1">Nama Pelanggan</label>
-                  <asp:TextBox CssClass="form-control" ID="nama" runat="server"></asp:TextBox>
+                  <asp:DropDownList ID="nama" CssClass="form-control" runat="server" DataSourceID="SqlDataSource2" DataTextField="nama" DataValueField="Id">
+                  </asp:DropDownList>
+                  <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [nama], [Id] FROM [User]"></asp:SqlDataSource>
                   <small>
                       <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Tidak boleh kosong" ControlToValidate="nama" ForeColor="#FF3300"></asp:RequiredFieldValidator>
                   </small>
@@ -57,7 +59,7 @@
                 <label>Paket</label><br />
                   <asp:DropDownList ID="HargaPaket" CssClass="form-control" runat="server" DataSourceID="SqlDataSource1" DataTextField="paket" DataValueField="harga">
                     </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [harga], [paket] FROM [Paket]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [paket], [harga] FROM [Paket]"></asp:SqlDataSource>
                   <small>
                       <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Tidak boleh kosong" ControlToValidate="HargaPaket" ForeColor="#FF3300" InitialValue="1"></asp:RequiredFieldValidator>
                   </small>

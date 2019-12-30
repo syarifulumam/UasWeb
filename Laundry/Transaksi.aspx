@@ -21,7 +21,7 @@
                     <asp:BoundField DataField="total" HeaderText="total" SortExpression="total" />
                 </Columns>
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Transaksi]" DeleteCommand="DELETE FROM [Transaksi] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Transaksi] ([nama], [berat], [metode], [status], [paket], [tanggal], [total]) VALUES (@nama, @berat, @metode, @status, @paket, @tanggal, @total)" UpdateCommand="UPDATE [Transaksi] SET [nama] = @nama, [berat] = @berat, [metode] = @metode, [status] = @status, [paket] = @paket, [tanggal] = @tanggal, [total] = @total WHERE [Id] = @Id">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Transaksi] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Transaksi] ([nama], [berat], [metode], [status], [paket], [tanggal], [total]) VALUES (@nama, @berat, @metode, @status, @paket, @tanggal, @total)" SelectCommand="SELECT [User].nama, [Transaksi].Id, [Transaksi].berat, [Transaksi].metode, [Transaksi].status, [Transaksi].paket, [Transaksi].tanggal, [Transaksi].total FROM [Transaksi] INNER JOIN [User] ON [Transaksi].userId = [User].Id" UpdateCommand="UPDATE [Transaksi] SET [nama] = @nama, [berat] = @berat, [metode] = @metode, [status] = @status, [paket] = @paket, [tanggal] = @tanggal, [total] = @total WHERE [Id] = @Id">
                 <DeleteParameters>
                     <asp:Parameter Name="Id" Type="Int32" />
                 </DeleteParameters>

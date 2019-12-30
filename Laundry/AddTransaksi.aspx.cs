@@ -14,7 +14,7 @@ namespace Laundry
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["User"] == null)
+            if (Session["Operator"] == null)
             {
                 Response.Redirect("Login.aspx");
             }
@@ -27,7 +27,7 @@ namespace Laundry
 
             koneksi.Open();
             //int harga;
-            string insert = "INSERT INTO [Transaksi] (nama,berat,metode,status,paket,tanggal,total) VALUES (@nama,@berat,@metode,@status,@HargaPaket,@tanggal,@total)";
+            string insert = "INSERT INTO [Transaksi] (nama,berat,metode,status,paket,tanggal,total,userId) VALUES (@nama,@berat,@metode,@status,@HargaPaket,@tanggal,@total,@userId)";
             SqlCommand insertquery = new SqlCommand(insert, koneksi);
             insertquery.Parameters.AddWithValue("@nama", nama.Text);
             insertquery.Parameters.AddWithValue("@berat", berat.Text);
@@ -49,6 +49,7 @@ namespace Laundry
             insertquery.Parameters.AddWithValue("@tanggal", DateTime.Now.ToString("yyyy-MM-dd"));
             int total = Int32.Parse(HargaPaket.SelectedValue) * int.Parse(berat.Text);
             insertquery.Parameters.AddWithValue("@total", total);
+            insertquery.Parameters.AddWithValue("@userId", Int32.Parse(nama.SelectedValue));
             insertquery.ExecuteNonQuery();
             koneksi.Close();
             Response.Redirect("Transaksi.aspx");
