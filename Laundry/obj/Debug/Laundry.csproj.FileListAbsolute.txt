@@ -1,0 +1,5 @@
+D:\Kuliah\Web\Percobaan\Laundry\Laundry\bin\Laundry.dll
+D:\Kuliah\Web\Percobaan\Laundry\Laundry\bin\Laundry.pdb
+D:\Kuliah\Web\Percobaan\Laundry\Laundry\obj\Debug\Laundry.csprojResolveAssemblyReference.cache
+D:\Kuliah\Web\Percobaan\Laundry\Laundry\obj\Debug\Laundry.dll
+D:\Kuliah\Web\Percobaan\Laundry\Laundry\obj\Debug\Laundry.pdb
